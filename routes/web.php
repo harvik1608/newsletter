@@ -19,6 +19,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/import-clients', [ClientController::class, 'import'])->name('admin.client.import');
 
     Route::resource('letters', LetterController::class);
+    Route::get('/load-letters', [LetterController::class, 'load'])->name('admin.letter.load');
+    Route::get('/letters/generate/{letter_id}', [LetterController::class, 'generate_letter'])->name('admin.letter.generate');
+    Route::get('/load-generated-letters', [LetterController::class, 'load_generated_letters'])->name('admin.generated_letter.load');
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('admin.logout');
 });
