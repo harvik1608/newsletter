@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="page-btn">
-        <a href="{{ url('letters/create') }}" class="btn btn-primary text-white">Generate</a>
+        <a href="{{ route('admin.letter.generate',['letter_id' => $letter->id ]) }}" class="btn btn-primary text-white">Generate</a>
     </div>
 </div>
 <div class="card">
@@ -31,7 +31,7 @@
                 <thead class="thead-light">
                     <tr>
                         <th width="5%">#</th>
-                        <th width="45%">Client</th>
+                        <th width="25%">Client Name</th>
                         <th width="15%">Created On</th>
                         <th width="10%" class="no-sort"></th>
                     </tr>
